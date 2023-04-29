@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<link rel="icon" href="https://west7014-studios-designs.w3spaces.com/IMAGES/favicon.png">
+<meta name="author" content="West7014 studios">
+<meta name="title" content="W7s Weather">
+<div class="weatherWidget" style="font-family : Sans-Serif; "></div>
+<script>
+   window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
+   window.weatherWidgetConfig.push({
+       selector:".weatherWidget",
+       apiKey:"Z5HG69NM679LAMZ6MG4PTL9A4", 
+       location:"84401", 
+       unitGroup:"us", 
+       forecastDays:5, 
+       title:"Ogden Utah", 
+       showTitle:true, 
+       showConditions:true
+   });
+  
+   (function() {
+   var d = document, s = d.createElement('script');
+   s.src = 'https://w7s-weather.w3spaces.com/base.js';
+   s.setAttribute('data-timestamp', +new Date());
+   (d.head || d.body).appendChild(s);
+   })();
+</script>
+</html>
