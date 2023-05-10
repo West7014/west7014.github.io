@@ -10,67 +10,97 @@
     <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js"></script>
 
     <script type="module">
-      // Firebase configuration
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-      import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
-      import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
 
-      const firebaseConfig = {
-  apiKey: "AIzaSyB0aLWN72hDCL-oMX-U961dfj-H5Yey7ws",
-  authDomain: "w7slogintesting.firebaseapp.com",
-  databaseURL: "https://w7slogintesting-default-rtdb.firebaseio.com",
-  projectId: "w7slogintesting",
-  storageBucket: "w7slogintesting.appspot.com",
-  messagingSenderId: "338940363771",
-  appId: "1:338940363771:web:df951f2884e1bdcf47015e",
-  measurementId: "G-V79BQ8ZXLP"
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  databaseURL: "YOUR_DATABASE_URL",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const database = getDatabase(app);
+const googleAuthProvider = new GoogleAuthProvider();
+
+const form = document.getElementById("login-form");
+const message = document.getElementById("message");
+const googleSignInButton = document.getElementById("google-sign-in-button");
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const email = form.email.value;
+  const password = form.password.value;
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      console.log("Logged in successfully!");
+      const user = userCredential.user;
+      const userId = user.uid;
+      const userData = {
+        email: email,
+        // Add other user data as needed
       };
+      set(ref(database, 'users/' + userId), userData)
+        .then(() => {
+          console.log("User data stored successfully!");
+          const expires = new Date();
+          expires.setDate(expires.getDate() + 2); // Expires in 2 days
+          localStorage.setItem('loginCookie', userId);
+          localStorage.setItem('sessionToken', user.getIdToken());
+          localStorage.setItem('expires', expires.getTime());
+          window.location.href = "https://example.com/dashboard";
+        })
+        .catch((error) => {
+          console.error(error.message);
+          message.innerHTML = "Incorrect email or password.";
+        });
+    })
+    .catch((error) => {
+      console.error(error.message);
+      message.innerHTML = "Incorrect email or password.";
+    });
+});
 
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const auth = getAuth(app);
-      const database = getDatabase(app);
+googleSignInButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  signInWithGoogle();
+});
 
-      // Handle form submission
-      const form = document.getElementById("login-form");
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        const email = form.email.value;
-        const password = form.password.value;
-        signInWithEmailAndPassword(auth, email, password)
-          .then(() => {
-            console.log("Logged in successfully!");
-            // Store user data in the Realtime Database
-            const userId = auth.currentUser.uid;
-            const userData = {
-              email: email,
-              // Add other user data as needed
-            };
-            set(ref(database, 'users/' + userId), userData)
-              .then(() => {
-                console.log("User data stored successfully!");
-                // Redirect to another page or update UI as needed
-              })
-              .catch((error) => {
-                console.error(error.message);
-                // Display error message to user
-              });
-          })
-          .catch((error) => {
-            console.error(error.message);
-            // Display error message to user
-          });
-      });
-    </script>
+function signInWithGoogle() {
+  signInWithPopup(auth, googleAuthProvider)
+    .then((userCredential) => {
+      console.log("Google sign-in successful!");
+      const user = userCredential.user;
+      const userId = user.uid;
+      const userData = {
+        email: user.email,
+        // Add other user data as needed
+      };
+      set(ref(database, 'users/' + userId), userData)
+        .then(() => {
+          console.log("User data stored successfully!");
+          const expires = new Date();
+          expires.setDate(expires.getDate() + 2); // Expires in 2 days
+          localStorage.setItem('loginCookie', userId);
+          localStorage.setItem('sessionToken', user.getIdToken());
+          localStorage.setItem('expires', expires.getTime());
+          window.location.href = "https://example.com/dashboard";
+        })
+        .catch((error) => {
+          console.error(error.message);
+        });
+    })
+    .catch((error) => {
+      console.error(error.message);
+    });
+}
+</script>
   </head>
-  <body>
-    <h1>Login</h1>
-    <form id="login-form">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required><br><br>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required><br><br>
-      <input type="submit" value="Log in">
-    </form>
-  </body>
 </html>
