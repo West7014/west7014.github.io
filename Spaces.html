@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <title>W7s Spaces</title>
+  <link href="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/931338_915729/favicon_images/favicon_alt_transparent-4e8988-16-icon.png" rel="icon" sizes="16x16" />
+  <link href="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/931338_915729/favicon_images/favicon_alt_transparent-4e8988-32-icon.png" rel="icon" sizes="32x32" />
+  <link href="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/931338_915729/favicon_images/favicon_alt_transparent-4e8988-apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+  <script async defer src="https://w7s-connect.w3spaces.com/API/W7s-Insider/Modded-Version/W7sConnectV1ENoTrack/W7sConnectV1ENoTrack.js"></script>
+  <style>
+    body {
+      background-image: url("https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/931338_915729/MulticoleredBackground.png");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+    }
+
+#chat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#chat-window {
+  border: 5px solid #251d59;
+  border-radius: 15px;
+  width: 500px;
+  height: 400px;
+  overflow-y: scroll;
+  background-image: linear-gradient(to bottom right, #4ad964, #c14ad9);
+  padding: 10px;
+  color: white;
+}
+
+#message-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#message-list li {
+  margin-bottom: 10px;
+}
+
+#chat-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  color: white;
+}
+
+#chat-form input {
+  margin-right: 10px;
+  border-radius: 5px;
+  background-color: rgba(20, 20, 20, 0.4);
+  color: white;
+  outline: none;
+  border: 1px solid transparent;
+  height: 25px;
+  fill: white;
+}
+
+#chat-form button {
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-image: linear-gradient(to bottom left, limegreen, blue);
+  color: white;
+  outline: none;
+  border: 2px solid white;
+  height: 29px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#chat-form button:hover {
+  background-image: linear-gradient(to bottom left, limegreen, purple);
+  cursor: pointer;
+}
+
+#profile-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#profile-form input {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: rgba(20, 20, 20, 0.4);
+  color: white;
+  outline: none;
+  border: 1px solid transparent;
+  height: 25px;
+}
+
+#profile-form button {
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-image: linear-gradient(to bottom right, limegreen, blue);
+  color: white;
+  outline: none;
+  border: 2px solid white;
+  height: 30px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#profile-form button:hover {
+  background-image: linear-gradient(to bottom right, limegreen, purple);
+  cursor: pointer;
+}
+
+#usernameresetbutton {
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-image: linear-gradient(to bottom, red, black);
+  color: white;
+  outline: none;
+  border: 2px solid white;
+  height: 30px;
+  text-align: center;
+}
+
+#usernameresetbutton:hover {
+  background-image: linear-gradient(to bottom, red, marron);
+  border: 2px solid maroon;
+}
+
+/* Preload animation styles */
+    .preload {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f1f1f1;
+    }
+    
+    .preload-spinner {
+      border: 10px solid #dbdbdb;
+      border-top: 10px solid #4285f4;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 2s linear infinite;
+      margin-bottom: 20px;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Progress bar styles */
+    .progress-bar {
+      width: 200px;
+      height: 10px;
+      background-color: #dbdbdb;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    
+    .progress-bar-inner {
+      height: 100%;
+      background-color: #4285f4;
+      width: 0%;
+      transition: width 0.2s ease-in-out;
+    }
+    
+    /* Hide preload animation after page loads */
+    body.loaded .preload {
+      display: none;
+    }
+
+    /* Style for the menu items */
+  .menu-item1 {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 0 -50px;
+    font-size: 30px;
+    color: black;
+    text-align: center;
+    border-radius: 50%;
+    z-index: 1;
+    transition: margin 0.5s ease-in-out, transform 0.5s ease-in-out;
+    background-color: #8a8a8a;
+  }
+  /* Style for the menu items */
+  .menu-item2 {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 0 -50px;
+    font-size: 30px;
+    color: black;
+    text-align: center;
+    border-radius: 50%;
+    z-index: 1;
+    transition: margin 0.5s ease-in-out, transform 0.5s ease-in-out;
+    background-color: #8a8a8a;
+  }
+  /* Style for the menu items */
+  .menu-item3 {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 0 -50px;
+    font-size: 30px;
+    color: black;
+    text-align: center;
+    border-radius: 50%;
+    z-index: 1;
+    transition: margin 0.5s ease-in-out, transform 0.5s ease-in-out;
+    background-color: #8a8a8a;
+  }
+  /* Style for the menu items */
+  .menu-item {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 0 -50px;
+    font-size: 68px;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    z-index: 1;
+    transition: margin 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+  
+  /* Style for the connector circle *//*
+  .connector {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #333;
+    z-index: 0;
+  }*/
+  
+  /* Style for the current page gradient */
+  .current-page {
+    background-image: linear-gradient(to top right, limegreen, purple);
+  }
+  
+  /* Style for the hover effect */
+  /*.menu-item:hover {
+    margin-left: 0.2px;
+  }*/
+  /* Style for the hover effect */
+  .menu-item1:hover {
+    margin-left: 0.3px;
+  }
+  /* Style for the hover effect */
+  .menu-item2:hover {
+    margin-left: 0.3px;
+  }
+  /* Style for the hover effect */
+  .menu-item3:hover {
+    margin-left: 0.3px;
+  }
+  
+  /* Style for the unselected menu items */
+  .menu-item1:not(.current-page) {
+    background-color: #8a8a8a;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    overflow: hidden;
+    transform-origin: left;
+    position: fixed;
+    left: 0px;
+    top: 120px;
+  }
+  
+  .menu-item2:not(.current-page) {
+    background-color: #8a8a8a;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    overflow: hidden;
+    transform-origin: left;
+    position: fixed;
+    left: 0px;
+    top: 200px;
+  }
+  
+  .menu-item3:not(.current-page) {
+    background-color: #8a8a8a;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    overflow: hidden;
+    transform-origin: left;
+    position: fixed;
+    left: 0px;
+    top: 280px;
+  }
+  
+  
+  /* Style for the gradient background when selected */
+  .menu-item.current-page {
+    background-image: linear-gradient(to top right, limegreen, purple);
+    position: fixed;
+    left: 55px;
+    top: 40px;
+  }
+  
+  /* Media query for desktop only */
+  @media (min-width: 768px) {
+    /* Style for the menu items on desktop */
+    .menu-item1 {
+      width: 100px;
+      height: 100px;
+      font-size: 36px;
+      margin: 0 -75px;
+    }
+    /* Style for the menu items on desktop */
+    .menu-item2 {
+      width: 100px;
+      height: 100px;
+      font-size: 36px;
+      margin: 0 -75px;
+    }
+    /* Style for the menu items on desktop */
+    .menu-item3 {
+      width: 100px;
+      height: 100px;
+      font-size: 36px;
+      margin: 0 -75px;
+    }
+    
+    /* Style for the connector circle on desktop */
+    .connector {
+      width: 100px;
+      height: 100px;
+    }
+    
+    /* Style for the hover effect on desktop */
+    .menu-item1:hover {
+      margin-left: 10px;
+    }
+    /* Style for the hover effect on desktop */
+    .menu-item2:hover {
+      margin-left: 10px;
+    }
+    /* Style for the hover effect on desktop */
+    .menu-item3:hover {
+      margin-left: 10px;
+    }
+    /* Style for the hover effect on desktop */
+    /*.menu-item:hover {
+      margin-left: 10px;
+    }*/
+    
+    /* Style for the unselected menu items on desktop *//*
+    .menu-item:not(.current-page) {
+      transform: scaleX(0.5);
+      transform-origin: left;
+    }*/
+  }
+
+  
+  /* Style for the menu list items */
+  li {
+    margin: 0 20px;
+  }
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+* {
+    font-family: 'Ubuntu', sans-serif;
+}
+  </style>
+  <script>
+    // Add 'loaded' class to body when page loads
+    window.addEventListener('load', function() {
+      document.body.classList.add('loaded');
+    });
+    
+    // Update progress bar as page loads
+    window.addEventListener('progress', function(event) {
+      if (event.lengthComputable) {
+        const progress = event.loaded / event.total * 100;
+        const progressBarInner = document.querySelector('.progress-bar-inner');
+        progressBarInner.style.width = progress + '%';
+      }
+    });
+  </script>
+</head>
+<body>
+  <!-- Preload animation and progress bar -->
+  <div class="preload">
+    <div class="preload-spinner"></div>
+    <div class="progress-bar">
+      <div class="progress-bar-inner"></div>
+    </div>
+  </div>
+  <!--Chat Code-->
+  <div id="chat-container">
+    <div id="chat-window">
+      <ul id="message-list"></ul>
+    </div>
+    <form id="chat-form">
+      <input required type="text" id="sender" placeholder="Name">
+      <input required type="text" id="message" placeholder="Message">
+      <button type="submit"><span class="material-icons">send</span></button>
+    </form>
+    <form id="profile-form">
+      <input required type="url" id="profile-picture" placeholder="Profile Picture URL">
+      <button type="submit"><span class="material-icons">pages</span></button>
+    </form>
+    <br>
+    <button type="reset" id="usernameresetbutton"><span class="material-icons">restart_alt</span></button>
+    <!--<p>This Application is being updated currently..</p>-->
+  </div>
+
+<div class="menu-wrapper">
+  <ul style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center;">
+    <li title="Public Chat"><a href="#" class="menu-item current-page"><img class="material-icons" src="./Spaces-Assets/outline_public_white_48dp.png"></a></li>
+    <li><div class="connector"></div></li>
+    <br>
+    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="menu-item1"><img class="material-icons" src="./Spaces-Assets/outline_update_white_48dp.png"></a></li>
+    <li><div class="connector"></div></li>
+    <br>
+    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="menu-item2"><img class="material-icons" src="./Spaces-Assets/outline_update_white_48dp.png"></a></li>
+    <li><div class="connector"></div></li>
+    <br>
+    <li><a href="./Error.html" style="text-decoration: none;" class="menu-item3"><img class="material-icons" src="./Spaces-Assets/outline_add_white_48dp.png"></a></li>
+  </ul>
+</div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
+  <script>
+    // Firebase config
+const firebaseConfig = {
+  apiKey: "AIzaSyCLmRY7cxOVfseXxn8gg2OLLcngrlk2RJ4",
+  authDomain: "w7sspacesbackend.firebaseapp.com",
+  databaseURL: "https://w7sspacesbackend-default-rtdb.firebaseio.com",
+  projectId: "w7sspacesbackend",
+  storageBucket: "w7sspacesbackend.appspot.com",
+  messagingSenderId: "125888576086",
+  appId: "1:125888576086:web:e2b51a9105e1bff6c899f7",
+  measurementId: "G-004W3C1ZE5"
+};
+
+// Init Firebase
+firebase.initializeApp(firebaseConfig);
+
+// database service
+var database = firebase.database();
+
+// ref DOM elements
+var messageList = document.getElementById('message-list');
+var chatForm = document.getElementById('chat-form');
+var senderInput = document.getElementById('sender');
+var messageInput = document.getElementById('message');
+
+// Save sendrr local strg and inpt to the saved name, if it exists
+var savedSender = localStorage.getItem('sender');
+if (savedSender) {
+  senderInput.value = savedSender;
+}
+
+// Listen for new messages in the database
+database.ref('messages').on('child_added', function(snapshot) {
+  var message = snapshot.val();
+  var li = document.createElement('li');
+  var timestamp = new Date(message.timestamp).toLocaleString();
+  li.innerText = message.sender + ' (' + timestamp + ') : ' + message.message;
+  messageList.appendChild(li);
+});
+
+// Listen form events
+chatForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // Get the sender and message values
+  var sender = senderInput.value.trim();
+  var message = messageInput.value.trim();
+
+  // Save the sender name to local storage
+  localStorage.setItem('sender', sender);
+
+  // Push the new message to the database
+  database.ref('messages').push({
+    sender: sender,
+    message: message,
+    timestamp: Date.now()
+  });
+
+  // Clear the message input
+  messageInput.value = '';
+});
+
+// Reset Name
+chatForm.addEventListener('reset', function(event) {
+  event.preventDefault();
+
+  // Delete the sender name from local storage.
+  localStorage.clear('sender');
+});
+  </script>
+</body>
+</html>
