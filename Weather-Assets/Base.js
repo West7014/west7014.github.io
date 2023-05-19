@@ -295,7 +295,7 @@
     var attach=function(config) {
 
         var instance=new WeatherForecastWidget(config );
-        instance.init(["https://west7014.github.io/Weather-Assets/CSSPack1.css","https://west7014.github.io/Weather-Assets/CSSPack2.css"]);
+        instance.init(["https://west7014.github.io/Weather-Assets/CSSPack1.css","https://www.visualcrossing.com/widgets/forecast-simple/css/weather-icons.min.css"]);
         //instance.loadForecastData();
         return instance;
     }
