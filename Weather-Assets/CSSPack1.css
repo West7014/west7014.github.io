@@ -19,7 +19,7 @@
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 .visualcrossing-wx-widget .forecast .period {
-    background-color: #bf00ff;
+    background-color: linear-gradient(to right, #0000FF, #BF00FF);
 }
 
 .visualcrossing-wx-widget .hidden {
@@ -93,7 +93,7 @@
 
 
 .visualcrossing-wx-widget {
-    background-color:#bf00ff;
+    background-color: linear-gradient(to right, #0000FF, #BF00FF);
     border-radius:5px;
     font-size:15px;   
     color:black;
