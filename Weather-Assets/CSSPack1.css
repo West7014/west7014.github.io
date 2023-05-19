@@ -232,7 +232,11 @@
 }
 
 .visualcrossing-wx-widget {
-    background-color:#bf00ff;
+    background-image: url("west7014.github.io/W7s-Weather-Background-Gradient.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
     color:white;
 }
 .visualcrossing-wx-widget .title {
