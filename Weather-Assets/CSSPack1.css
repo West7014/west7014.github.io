@@ -19,7 +19,11 @@
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 .visualcrossing-wx-widget .forecast .period {
-    background-color: linear-gradient(to right, #0000FF, #BF00FF);
+    background-image: url("west7014.github.io/W7s-Weather-Background-Gradient.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
 
 .visualcrossing-wx-widget .hidden {
@@ -93,7 +97,11 @@
 
 
 .visualcrossing-wx-widget {
-    background-color: linear-gradient(to right, #0000FF, #BF00FF);
+    background-image: url("west7014.github.io/W7s-Weather-Background-Gradient.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
     border-radius:5px;
     font-size:15px;   
     color:black;
@@ -163,7 +171,11 @@
 
 
 .blue .visualcrossing-wx-widget {
-    background-color: linear-gradient(to right, #0000FF, #BF00FF);
+    background-image: url("west7014.github.io/W7s-Weather-Background-Gradient.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
     color:white;
 }
 .blue .visualcrossing-wx-widget .title {
