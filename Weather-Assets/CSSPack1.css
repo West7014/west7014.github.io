@@ -163,7 +163,7 @@
 
 
 .blue .visualcrossing-wx-widget {
-    background-color:#bf00ff;
+    background-color: linear-gradient(to right, #0000FF, #BF00FF);
     color:white;
 }
 .blue .visualcrossing-wx-widget .title {
