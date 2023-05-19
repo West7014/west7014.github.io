@@ -9,7 +9,7 @@
     overflow: hidden;
     box-sizing: border-box;
     padding: 3px;
-    background-color: #bf00ff;
+    background-color: linear-gradient(to right, #0000FF, #BF00FF);
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
@@ -19,11 +19,7 @@
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 .visualcrossing-wx-widget .forecast .period {
-    background-image: url("west7014.github.io/W7s-Weather-Background-Gradient.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+    background-color: linear-gradient(to right, #0000FF, #BF00FF);
 }
 
 .visualcrossing-wx-widget .hidden {
@@ -97,11 +93,7 @@
 
 
 .visualcrossing-wx-widget {
-    background-image: url("west7014.github.io/W7s-Weather-Background-Gradient.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+    background-color: linear-gradient(to right, #0000FF, #BF00FF);
     border-radius:5px;
     font-size:15px;   
     color:black;
@@ -171,11 +163,7 @@
 
 
 .blue .visualcrossing-wx-widget {
-    background-image: url("west7014.github.io/W7s-Weather-Background-Gradient.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+    background-color: linear-gradient(to right, #0000FF, #BF00FF);
     color:white;
 }
 .blue .visualcrossing-wx-widget .title {
@@ -232,11 +220,7 @@
 }
 
 .visualcrossing-wx-widget {
-    background-image: url("west7014.github.io/W7s-Weather-Background-Gradient.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+    background-color: linear-gradient(to right, #0000FF, #BF00FF);
     color:white;
 }
 .visualcrossing-wx-widget .title {
