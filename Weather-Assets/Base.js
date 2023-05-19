@@ -209,7 +209,7 @@
                 var formattedDate= me.formatDate(d);
                 var nextformattedDate=nextd && me.formatDate(nextd);
 
-                forecast.insertAdjacentHTML('beforeend', "<div class='period' style='background-color:#bf00ff;'>"+
+                forecast.insertAdjacentHTML('beforeend', "<div class='period'>"+
                 "<div class='date'></div>"+
                 "<i class='wi icon'></i>"+
                 "<div class='maxt'></div>"+
