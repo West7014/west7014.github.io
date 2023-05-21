@@ -97,13 +97,13 @@
                  //refresh the display
                  me.refresh();
             } else {
-                // We reached our target server, but it returned an error
+                console.error("Connected to Target Server but an Error Occured!");
 
             }
             };
 
             request.onerror = function() {
-            // There was a connection error of some sort
+            console.error("And Error Occured!");
             };
 
             request.send();
