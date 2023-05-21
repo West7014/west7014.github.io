@@ -2,6 +2,7 @@
 
 
 .visualcrossing-wx-widget {
+    boder-radius: 10px;
     display: flex;
     -ms-flex-direction: column;
     -webkit-flex-direction: column;
