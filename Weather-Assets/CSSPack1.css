@@ -2,7 +2,7 @@
 
 
 .visualcrossing-wx-widget {
-    border-radius: 20px;
+    border-radius: 10px;
     display: flex;
     -ms-flex-direction: column;
     -webkit-flex-direction: column;
@@ -133,11 +133,11 @@
 
 .visualcrossing-wx-widget {
     background-color:#ffffff;
-    border-radius:20px   
+    border-radius:10px   
 }
 
 .big .visualcrossing-wx-widget {
-    font-size:20px; 
+    font-size:10px; 
 }
 .small .visualcrossing-wx-widget {
     font-size:10px; 
