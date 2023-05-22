@@ -163,7 +163,7 @@
                  "</div>"+
                  "<div class='forecast'></div>"+
              "</div>"+
-            "<a class='credit' href='https://ibm.com/weather' title='IBM Weather Link' target='_blank'>.</a>"+
+            "<a class='credit' href='https://john-w.w3spaces.com' title='IBM Weather Link' target='_blank'>By. John W.</a>"+
             "</div>");
 
             var location=me.dailydata.location;
