@@ -15,7 +15,7 @@
 background-repeat: no-repeat;
 background-attachment: fixed;
 background-position: center;
-   background-size: auto;
+   background-size: contain;
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
@@ -29,7 +29,7 @@ background-position: center;
 background-repeat: no-repeat;
 background-attachment: fixed;
 background-position: center;
-   background-size: auto;
+   background-size: contain;
 }
 
 .visualcrossing-wx-widget .hidden {
@@ -107,7 +107,7 @@ background-position: center;
 background-repeat: no-repeat;
 background-attachment: fixed;
 background-position: center;
-background-size: auto;
+background-size: contain;
     border-radius:5px;
     font-size:15px;   
     color:black;
@@ -181,7 +181,7 @@ background-size: auto;
 background-repeat: no-repeat;
 background-attachment: fixed;
 background-position: center;
-background-size: auto;
+background-size: contain;
     color:white;
 }
 .blue .visualcrossing-wx-widget .title {
@@ -242,7 +242,7 @@ background-size: auto;
 background-repeat: no-repeat;
 background-attachment: fixed;
 background-position: center;
-background-size: auto;
+background-size: contain;
     color:white;
 }
 .visualcrossing-wx-widget .title {
