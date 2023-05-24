@@ -11,7 +11,11 @@
     overflow: hidden;
     box-sizing: border-box;
     padding: 3px;
-    background-color: #b31b4d;
+   background-image: url("https://west7014-studios-weather.w3spaces.com/DSC_0790.jpg");
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+background-size: cover;
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
@@ -21,7 +25,11 @@
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 .visualcrossing-wx-widget .forecast .period {
-    background-color: #b31b4d;
+    background-image: url("https://west7014-studios-weather.w3spaces.com/DSC_0790.jpg");
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+background-size: cover;
 }
 
 .visualcrossing-wx-widget .hidden {
@@ -95,7 +103,11 @@
 
 
 .visualcrossing-wx-widget {
-    background-color: #b31b4d;
+    background-color: background-image: url("https://west7014-studios-weather.w3spaces.com/DSC_0790.jpg");
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+background-size: cover;;
     border-radius:5px;
     font-size:15px;   
     color:black;
@@ -165,7 +177,11 @@
 
 
 .blue .visualcrossing-wx-widget {
-    background-color: #b31b4d;
+    background-color: background-image: url("https://west7014-studios-weather.w3spaces.com/DSC_0790.jpg");
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+background-size: cover;;
     color:white;
 }
 .blue .visualcrossing-wx-widget .title {
@@ -222,7 +238,11 @@
 }
 
 .visualcrossing-wx-widget {
-    background-color: #b31b4d;
+    background-color: background-image: url("https://west7014-studios-weather.w3spaces.com/DSC_0790.jpg");
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+background-size: cover;;
     color:white;
 }
 .visualcrossing-wx-widget .title {
