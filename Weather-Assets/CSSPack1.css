@@ -11,7 +11,7 @@
     overflow: hidden;
     box-sizing: border-box;
     padding: 3px;
-    background-color: #5b19a6;
+    background-color: #b31b4d;
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
@@ -21,7 +21,7 @@
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 .visualcrossing-wx-widget .forecast .period {
-    background-color: #5b19a6;
+    background-color: #b31b4d;
 }
 
 .visualcrossing-wx-widget .hidden {
@@ -95,7 +95,7 @@
 
 
 .visualcrossing-wx-widget {
-    background-color: #5b19a6;
+    background-color: #b31b4d;
     border-radius:5px;
     font-size:15px;   
     color:black;
@@ -165,7 +165,7 @@
 
 
 .blue .visualcrossing-wx-widget {
-    background-color: #5b19a6;
+    background-color: #b31b4d;
     color:white;
 }
 .blue .visualcrossing-wx-widget .title {
@@ -222,7 +222,7 @@
 }
 
 .visualcrossing-wx-widget {
-    background-color: #5b19a6;
+    background-color: #b31b4d;
     color:white;
 }
 .visualcrossing-wx-widget .title {
