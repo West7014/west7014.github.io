@@ -1,88 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
 * {
-   font-family: 'Ubuntu', sans-serif;
-   }
+    font-family: 'Ubuntu', sans-serif;
+}
+
 .visualcrossing-wx-widget {
     border-radius: 10px;
     display: flex;
-    -ms-flex-direction: column;
-    -webkit-flex-direction: column;
     flex-direction: column;
     overflow: hidden;
     box-sizing: border-box;
     padding: 3px;
-   background-image: url("https://west7014-studios-weather.w3spaces.com/DSC_0790.jpg");
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
-   background-size: contain;
+    background-image: url("https://west7014-studios-weather.w3spaces.com/DSC_0790.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: contain;
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera, and Firefox */
 }
+
 .visualcrossing-wx-widget .forecast .period {
     background-image: url("https://west7014-studios-weather.w3spaces.com/DSC_0790.jpg");
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
-   background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: contain;
 }
 
 .visualcrossing-wx-widget .hidden {
     display: none !important;
 }
+
 .visualcrossing-wx-widget .summary {
     margin-left: 5px;
 }
-.visualcrossing-wx-widget .content  {
+
+.visualcrossing-wx-widget .content {
     display: flex;
-    -ms-flex-direction: row;
-    -webkit-flex-direction: row;
     flex-direction: row;
     flex-wrap: wrap;
-    flex:1 1 auto;
+    flex: 1 1 auto;
     justify-content: center;
 }
 
 .visualcrossing-wx-widget .content * {
-    padding-top:3px;
+    padding-top: 3px;
 }
-/*
-@media screen and (max-width: 300px) {
-    .visualcrossing-wx-widget .content  {
-        flex-direction: column
-    }
-}
-*/
+
 .visualcrossing-wx-widget .current {
     display: flex;
-    -ms-flex-direction: row;
-    -webkit-flex-direction: row;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     margin: 2px 5px;
 }
+
 .visualcrossing-wx-widget .current .icon {
     font-size: 32px;
-   /* width:48px;
-    height:48px;*/
 }
 
 .visualcrossing-wx-widget .period .icon {
-    font-size:18px;
-   /* width:24px;
-    height:24px;*/
+    font-size: 18px;
 }
 
 .visualcrossing-wx-widget .forecast {
     display: flex;
-    -ms-flex-direction: row;
-    -webkit-flex-direction: row;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
@@ -91,34 +78,30 @@ background-position: center;
 
 .visualcrossing-wx-widget .period {
     display: flex;
-    -ms-flex-direction: column;
-    -webkit-flex-direction: column;
     flex-direction: column;
     justify-items: center;
     align-items: center;
 }
-.visualcrossing-wx-widget  .period * {
-  grid-column: span 2;
-}
 
+.visualcrossing-wx-widget .period * {
+    grid-column: span 2;
+}
 
 .visualcrossing-wx-widget {
-    background-color: background-image: url("https://west7014-studios-weather.w3spaces.com/DSC_0790.jpg");
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
-background-size: contain;
-    border-radius:5px;
-    font-size:15px;   
-    color:black;
+    background-color: #ffffff;
+    border-radius: 5px;
+    font-size: 15px;
+    color: black;
 }
+
 .visualcrossing-wx-widget .title {
     overflow: hidden;
-    white-space: nowrap; 
-    font-size: 0.7em; 
+    white-space: nowrap;
+    font-size: 0.7em;
     text-align: center;
-    padding:3px 0px;
+    padding: 3px 0px;
 }
+
 .visualcrossing-wx-widget .credit {
     overflow: hidden;
     white-space: nowrap;
@@ -135,130 +118,117 @@ background-size: contain;
 .visualcrossing-wx-widget .current .summary .temp {
     font-size: 1.8em;
 }
+
 .visualcrossing-wx-widget .period .date {
     font-size: 0.7em;
     padding: 2px 1px;
 }
 
 .visualcrossing-wx-widget .period .maxt {
-    font-size: 1.0em; 
-}
-
-.visualcrossing-wx-widget {
-    background-color:#ffffff;
-    border-radius:10px   
+    font-size: 1.0em;
 }
 
 .big .visualcrossing-wx-widget {
-    font-size:10px; 
+    font-size: 10px;
 }
-.small .visualcrossing-wx-widget {
-    font-size:10px; 
-}
-.greyscale .visualcrossing-wx-widget {
-    background-color:#ffffff;
 
+.small .visualcrossing-wx-widget {
+    font-size: 10px;
 }
+
+.greyscale .visualcrossing-wx-widget {
+    background-color: #ffffff;
+}
+
 .greyscale .visualcrossing-wx-widget .title {
-    color: #797777; 
+    color: #797777;
 }
+
 .greyscale .visualcrossing-wx-widget .credit {
-    color: #797777; 
+    color: #797777;
 }
 
 .greyscale .visualcrossing-wx-widget .period .date {
-    color: #797777; 
+    color: #797777;
 }
-
 
 .greyscale .visualcrossing-wx-widget .icon {
-    color: #131212; 
+    color: #131212;
 }
-
 
 .blue .visualcrossing-wx-widget {
-    background-color: background-image: url("https://west7014-studios-weather.w3spaces.com/DSC_0790.jpg");
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
-background-size: contain;
-    color:white;
+    background-color: #ffffff;
+    color: white;
 }
+
 .blue .visualcrossing-wx-widget .title {
-   
 }
+
 .blue .visualcrossing-wx-widget .credit {
-   
 }
 
 .blue .visualcrossing-wx-widget .period .date {
-   
 }
 
 .blue .visualcrossing-wx-widget .icon {
-  
 }
 
 .red .visualcrossing-wx-widget {
     background-color: white;
-    color:white;
+    color: white;
 }
+
 .red .visualcrossing-wx-widget .title {
-  
 }
+
 .red .visualcrossing-wx-widget .credit {
-  
 }
 
 .red .visualcrossing-wx-widget .period .date {
-    
 }
 
 .red .visualcrossing-wx-widget .icon {
-   
 }
 
 .green .visualcrossing-wx-widget {
-    background-color:#46aa1e;
-    color:white;
+    background-color: #46aa1e;
+    color: white;
 }
+
 .green .visualcrossing-wx-widget .title {
-  
 }
+
 .green .visualcrossing-wx-widget .credit {
-  
 }
 
 .green .visualcrossing-wx-widget .period .date {
-    
 }
 
 .green .visualcrossing-wx-widget .icon {
-   
 }
 
 .visualcrossing-wx-widget {
-    background-color: background-image: url("https://west7014-studios-weather.w3spaces.com/DSC_0790.jpg");
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
-background-size: contain;
-    color:white;
+    background-color: #ffffff;
+    color: white;
 }
+
 .visualcrossing-wx-widget .title {
-    color:#bdbdbd;
+    color: #bdbdbd;
 }
+
 .visualcrossing-wx-widget .credit {
-    color:#9e9e9e;
+    color: #9e9e9e;
 }
 
 .visualcrossing-wx-widget .period .date {
-    color:#bdbdbd;
+    color: #bdbdbd;
 }
+
 .visualcrossing-wx-widget .period .maxt {
-    color:#fc6500;
-   font-weight: bold 50px;
+    color: #fc6500;
+    font-weight: bold;
 }
+
 .visualcrossing-wx-widget .icon {
-    color:#e8e8e8;
+    color: #e8e8e8;
 }
