@@ -1,34 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
 * {
-   font-family: 'Ubuntu', sans-serif;
-   }
+  font-family: 'Ubuntu', sans-serif;
+}
+
 .visualcrossing-wx-widget {
-    border-radius: 10px;
-    display: flex;
-    -ms-flex-direction: column;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    overflow: hidden;
-    box-sizing: border-box;
-    padding: 3px;
-  /* background-color:  #153d42; */
-   background: url("https://west7014-studios-weather.w3spaces.com/DSC_0790.jpg") no-repeat center center fixed;
-background-size: contain;
-background-position: center;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 3px;
+  background-image: url("https://west7014-studios-weather.w3spaces.com/DSC_0790.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
+
 .visualcrossing-wx-widget .forecast .period {
-   /* background-color:  #153d42; */
-   background: url("https://west7014-studios-weather.w3spaces.com/DSC_0790.jpg") no-repeat center center fixed;
-background-size: contain;
-background-position: center;
+  background-image: url("https://west7014-studios-weather.w3spaces.com/DSC_0790.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
+
+/* Rest of the CSS code remains the same */
+
 
 .visualcrossing-wx-widget .hidden {
     display: none !important;
