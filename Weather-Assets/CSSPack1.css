@@ -1,163 +1,163 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 * {
-    font-family: 'Ubuntu', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .visualcrossing-wx-widget {
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    box-sizing: border-box;
-    padding: 3px;
-    background: url("https://west7014-studios-weather.w3spaces.com/DSC_0790.jpg") no-repeat center center fixed;
-    background-size: cover;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera, and Firefox */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 3px;
+  background: url("https://west7014-studios-weather.w3spaces.com/DSC_0790.jpg") no-repeat center center fixed;
+  background-size: cover;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera, and Firefox */
 }
 
 .visualcrossing-wx-widget .forecast .period {
-    background: url("https://west7014-studios-weather.w3spaces.com/DSC_0790.jpg") no-repeat center center fixed;
-    background-size: cover;
+  background: url("https://west7014-studios-weather.w3spaces.com/DSC_0790.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 
 .visualcrossing-wx-widget .hidden {
-    display: none !important;
+  display: none !important;
 }
 
 .visualcrossing-wx-widget .summary {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 .visualcrossing-wx-widget .content {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex: 1 1 auto;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  justify-content: center;
 }
 
 .visualcrossing-wx-widget .content * {
-    padding-top: 3px;
+  padding-top: 3px;
 }
 
 .visualcrossing-wx-widget .current {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 2px 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 2px 5px;
 }
 
 .visualcrossing-wx-widget .current .icon {
-    font-size: 32px;
+  font-size: 32px;
 }
 
 .visualcrossing-wx-widget .period .icon {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .visualcrossing-wx-widget .forecast {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1;
 }
 
 .visualcrossing-wx-widget .period {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
 }
 
 .visualcrossing-wx-widget .period * {
-    grid-column: span 2;
+  grid-column: span 2;
 }
 
 .visualcrossing-wx-widget {
-    background-color: #ffffff;
-    border-radius: 5px;
-    font-size: 15px;
-    color: black;
+  background-color: #ffffff;
+  border-radius: 5px;
+  font-size: 15px;
+  color: black;
 }
 
 .visualcrossing-wx-widget .title {
-    overflow: hidden;
-    white-space: nowrap;
-    font-size: 0.7em;
-    text-align: center;
-    padding: 3px 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 0.7em;
+  text-align: center;
+  padding: 3px 0px;
 }
 
 .visualcrossing-wx-widget .credit {
-    overflow: hidden;
-    white-space: nowrap;
-    font-size: 10px;
-    text-align: right;
-    padding: 5px 10px 0px 5px;
-    text-decoration: none;
-    color: unset;
-    border: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 10px;
+  text-align: right;
+  padding: 5px 10px 0px 5px;
+  text-decoration: none;
+  color: unset;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .visualcrossing-wx-widget .current .summary .temp {
-    font-size: 1.8em;
+  font-size: 1.8em;
 }
 
 .visualcrossing-wx-widget .period .date {
-    font-size: 0.7em;
-    padding: 2px 1px;
+  font-size: 0.7em;
+  padding: 2px 1px;
 }
 
 .visualcrossing-wx-widget .period .maxt {
-    font-size: 1.0em;
+  font-size: 1.0em;
 }
 
 .visualcrossing-wx-widget {
-    background-color: #ffffff;
-    border-radius: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
 }
 
 .big .visualcrossing-wx-widget {
-    font-size: 10px;
+  font-size: 10px;
 }
 
 .small .visualcrossing-wx-widget {
-    font-size: 10px;
+  font-size: 10px;
 }
 
 .greyscale .visualcrossing-wx-widget {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 
 .greyscale .visualcrossing-wx-widget .title {
-    color: #797777;
+  color: #797777;
 }
 
 .greyscale .visualcrossing-wx-widget .credit {
-    color: #797777;
+  color: #797777;
 }
 
 .greyscale .visualcrossing-wx-widget .period .date {
-    color: #797777;
+  color: #797777;
 }
 
 .greyscale .visualcrossing-wx-widget .icon {
-    color: #131212;
+  color: #131212;
 }
 
 .blue .visualcrossing-wx-widget {
-    background-color: #ffffff;
-    color: white;
+  background-color: #ffffff;
+  color: white;
 }
 
 .blue .visualcrossing-wx-widget .title {
@@ -173,8 +173,8 @@
 }
 
 .red .visualcrossing-wx-widget {
-    background-color: white;
-    color: white;
+  background-color: white;
+  color: white;
 }
 
 .red .visualcrossing-wx-widget .title {
@@ -190,8 +190,8 @@
 }
 
 .green .visualcrossing-wx-widget {
-    background-color: #46aa1e;
-    color: white;
+  background-color: #46aa1e;
+  color: white;
 }
 
 .green .visualcrossing-wx-widget .title {
@@ -207,27 +207,27 @@
 }
 
 .visualcrossing-wx-widget {
-    background-color: #ffffff;
-    color: white;
+  background-color: #ffffff;
+  color: white;
 }
 
 .visualcrossing-wx-widget .title {
-    color: #bdbdbd;
+  color: #bdbdbd;
 }
 
 .visualcrossing-wx-widget .credit {
-    color: #9e9e9e;
+  color: #9e9e9e;
 }
 
 .visualcrossing-wx-widget .period .date {
-    color: #bdbdbd;
+  color: #bdbdbd;
 }
 
 .visualcrossing-wx-widget .period .maxt {
-    color: #fc6500;
-    font-weight: bold;
+  color: #fc6500;
+  font-weight: bold;
 }
 
 .visualcrossing-wx-widget .icon {
-    color: #e8e8e8;
+  color: #e8e8e8;
 }
