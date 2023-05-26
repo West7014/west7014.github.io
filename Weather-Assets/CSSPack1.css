@@ -14,7 +14,7 @@
   background-image: url("https://west7014.github.io/Weather-Assets/DSC_0790.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: 100% auto;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
@@ -172,7 +172,7 @@
 .blue .visualcrossing-wx-widget {
    /* background-color:  #153d42; */
    background: url("https://west7014.github.io/Weather-Assets/DSC_0790.jpg") no-repeat center center fixed;
-background-size: contain;
+background-size: 100% auto;
 background-position: center;
     color:white;
 }
