@@ -21,6 +21,7 @@
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+  background-color: #153d42;
 }
 
 .visualcrossing-wx-widget .forecast .period {
@@ -232,9 +233,11 @@ background-position: center;
 .visualcrossing-wx-widget {
   /* background-color:  #153d42; */
     color:white;
+  background-color: #153d42;
 }
 .visualcrossing-wx-widget .title {
     color:#bdbdbd;
+  background-color: #153d42;
 }
 .visualcrossing-wx-widget .credit {
     color:#9e9e9e;
