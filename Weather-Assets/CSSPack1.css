@@ -14,7 +14,7 @@
   background-image: url("https://west7014.github.io/Weather-Assets/MAWeatherJUNE1BACKGROUNDDESIGN.jpg");
   background-repeat: no-repeat;
   background-position: center bottom;
-  background-size: 100% auto;
+  background-size: contain;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
@@ -174,7 +174,7 @@
    /* background-color:  #153d42; */
    background: url("https://west7014.github.io/Weather-Assets/MAWeatherJUNE1BACKGROUNDDESIGN.jpg") no-repeat center center fixed;
   background-position: center bottom;
-background-size: 100% auto;
+background-size: contain;
 background-position: center;
     color:white;
 }
