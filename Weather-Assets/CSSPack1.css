@@ -11,7 +11,7 @@
   overflow: hidden;
   box-sizing: border-box;
   padding: 3px;
-  background-image: url("https://west7014.github.io/Weather-Assets/MAWeatherJUNE1BACKGROUNDDESIGNv2.jpg");
+  background-image: url("https://west7014.github.io/Weather-Assets/MAWeatherJUNE1BACKGROUNDDESIGN.jpg");
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 100% auto;
@@ -172,7 +172,7 @@
 
 .blue .visualcrossing-wx-widget {
    /* background-color:  #153d42; */
-   background: url("https://west7014.github.io/Weather-Assets/MAWeatherJUNE1BACKGROUNDDESIGNv2.jpg") no-repeat center center fixed;
+   background: url("https://west7014.github.io/Weather-Assets/MAWeatherJUNE1BACKGROUNDDESIGN.jpg") no-repeat center center fixed;
   background-position: center bottom;
 background-size: 100% auto;
 background-position: center;
