@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Puzzle Game</title>
+  <style>
+    #puzzle-container {
+      width: 500px;
+      height: 500px;
+      border: 1px solid black;
+      position: relative;
+    }
+    .puzzle-piece {
+      width: 100px;
+      height: 100px;
+      background-color: #ccc;
+      border: 1px solid black;
+      position: absolute;
+    }
+    #problem-container {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="puzzle-container">
+    <div class="puzzle-piece" id="piece1" draggable="true"></div>
+    <div class="puzzle-piece" id="piece2" draggable="true"></div>
+    <div class="puzzle-piece" id="piece3" draggable="true"></div>
+    <div class="puzzle-piece" id="piece4" draggable="true"></div>
+  </div>
+  <div id="problem-container"></div>
+
+  <script>
+    // Jigsaw puzzle game logic
+    var puzzlePieces = document.querySelectorAll('.puzzle-piece');
+    var puzzleContainer = document.getElementById('puzzle-container');
+    var problemContainer = document.getElementById('problem-container');
+
+    function initGame() {
+      // Reset puzzle pieces
+      puzzlePieces.forEach(function (piece) {
+        piece.style.top = '';
+        piece.style.left = '';
+        piece.style.cursor = 'move';
+      });
+
+      // Generate a random math or web dev problem
+      var problemType = Math.random() < 0.5 ? 'Math' : 'Web Dev';
+      var problem = generateProblem(problemType);
+      problemContainer.textContent = problem;
+    }
+
+    function generateProblem(type) {
+      if (type === 'Math') {
+        // Generate a simple addition problem
+        var num1 = Math.floor(Math.random() * 10) + 1;
+        var num2 = Math.floor(Math.random() * 10) + 1;
+        return 'Solve: ' + num1 + ' + ' + num2 + ' = ?';
+      } else if (type === 'Web Dev') {
+        // Generate a simple web dev problem
+        var webDevProblems = [
+          'What is the correct HTML tag for the largest heading?',
+          'Which CSS property is used to change the background color of an element?',
+          'What is the correct syntax for referring to an external script file?',
+        ];
+        var randomIndex = Math.floor(Math.random() * webDevProblems.length);
+        return webDevProblems[randomIndex];
+      }
+    }
+
+    // Event listeners for drag and drop functionality
+    puzzlePieces.forEach(function (piece) {
+      piece.addEventListener('dragstart', dragStart);
+      piece.addEventListener('dragend', dragEnd);
+    });
+
+    puzzleContainer.addEventListener('dragover', dragOver);
+    puzzleContainer.addEventListener('dragenter', dragEnter);
+    puzzleContainer.addEventListener('dragleave', dragLeave);
+    puzzleContainer.addEventListener('drop', dragDrop);
+
+    function dragStart(e) {
+      e.dataTransfer.setData('text/plain', e.target.id);
+      e.target.style.opacity = '0.5';
+    }
+
+    function dragEnd(e) {
+      e.target.style.opacity = '1';
+    }
+
+    function dragOver(e) {
+      e.preventDefault();
+    }
+
+    function dragEnter(e) {
+      e.preventDefault();
+      puzzleContainer.style.border = '2px dashed black';
+    }
+
+    function dragLeave() {
+      puzzleContainer.style.border = '1px solid black';
+    }
+
+    function dragDrop(e) {
+      e.preventDefault();
+      puzzleContainer.style.border = '1px solid black';
+      var puzzlePieceId = e.dataTransfer.getData('text/plain');
+      var puzzlePiece = document.getElementById(puzzlePieceId);
+      puzzlePiece.style.cursor = 'default';
+      var offsetX = e.clientX - puzzleContainer.getBoundingClientRect().left;
+      var offsetY = e.clientY - puzzleContainer.getBoundingClientRect().top;
+      puzzlePiece.style.left = offsetX + 'px';
+      puzzlePiece.style.top = offsetY + 'px';
+    }
+
+    // Initialize the game
+    initGame();
+  </script>
+</body>
+</html>
