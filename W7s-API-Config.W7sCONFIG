@@ -1,0 +1,21 @@
+@Start:Service(API)%
+@Session.Start(Charge:Bool:True)
+@Core.Services
+*API.service(Function.run(Init))%
+*API.service(Functiom.run(PingTst))%
+*API.service(Function.run(Build))%
+*API.service(Function.run(Start))%
+@Main
+*API.Import(Crypto|SStore|CMonitor|RTEnviorment|FConvert|W7s-OS.Services)%
+*API.Import(Path(https://CORE.west7014studios.com/API/Services/Testing/Beta/Restricted/G/V9.4))%
+@Run
+*API.Compute(Default:W7sPRO)%
+*API.Membership([PRO])%
+*API.Membership(Verify(./Verification|Key(5836506483658495647465234)))%
+$TBA - Add custom actions to config files.
+*API.Loop(Bool:False)%
+@Session.End
+@Stop
+@Kill
+@Clean
+@End
