@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>File Upload</title>
+</head>
+<body>
+  <h1>File Upload</h1>
+  <form action="upload.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" />
+    <input type="submit" value="Upload" />
+  </form>
+
+  <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-storage.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script>
+    // Firebase configuration
+    var firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_AUTH_DOMAIN",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_STORAGE_BUCKET",
+      appId: "YOUR_APP_ID"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // File upload event listener
+    document.querySelector("form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      var file = event.target.file.files[0];
+
+      // File scanning for inappropriate content and text
+      // Add your scanning logic here
+
+      // Upload file to Google Drive
+      var storageRef = firebase.storage().ref();
+      var fileName = generateFileName(file.name);
+      var fileRef = storageRef.child(fileName);
+      var uploadTask = fileRef.put(file);
+
+      // File upload completion callback
+      uploadTask.on(
+        "state_changed",
+        function(snapshot) {
+          // File upload progress
+          var progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log("Upload is " + progress + "% complete");
+        },
+        function(error) {
+          // File upload error
+          console.error("Error uploading file:", error);
+        },
+        function() {
+          // File upload success
+          console.log("File uploaded successfully!");
+        }
+      );
+    });
+
+    // Generate file name based on the specified format
+    function generateFileName(originalName) {
+      var currentDate = new Date().toISOString().split("T")[0];
+      var nameWithoutExtension = originalName.split(".")[0];
+      return `./${nameWithoutExtension}/${currentDate}/${originalName}`;
+    }
+  </script>
+</body>
+</html>
