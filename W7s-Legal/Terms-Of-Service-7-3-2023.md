@@ -21,7 +21,7 @@ Please review the following terms carefully. By accessing or using the Service, 
 
 ### REGISTRATION; RULES FOR USER CONDUCT AND USE OF THE SERVICE
 
-#### You need to be at least 13 years old and a resident of the United States or the United Kingdom to register for and use the Service.
+#### You need to be at least 12 years old and a resident of the United States or the United Kingdom to register for and use the Service.
 #### If you are a user who signs up for the Service, you will create a personalized account which includes a unique username and a password to access the Service and to receive messages from the Company. You agree to notify us immediately of any unauthorized use of your password and/or account. The Company will not be responsible for any liabilities, losses, or damages arising out of the unauthorized use of your member name, password and/or account.
 
 ### USE RESTRICTIONS
