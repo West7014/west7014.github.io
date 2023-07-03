@@ -1,5 +1,6 @@
-*** Terms of Use ***
+# Terms of Use
 
+---
 
 ## West7014 studios Terms of Use
 ## Effective as of Jan 6, 2023
