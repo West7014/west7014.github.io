@@ -53,12 +53,95 @@
         }
 
         this.loadForecastData = function() {
-            // ... (existing code remains unchanged)
+            //for now abandon loading data if an error has been recorded
+            if ( me.error) return;
+
+
+            if ((me.config.hourly && me.hourlydata) || (!me.config.hourly && me.dailydata)) return;
+
+            //endpoint
+            var uri=(initConfig.root || "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/weatherdata/");
+            uri+='forecast?';
+            //parameters
+            uri+="unitGroup="+me.config.unitGroup+"&contentType=json&locationMode=single&iconSet=icons1&location="+me.config.location+"&key="+me.config.key;
+            uri+="&aggregateHours=12"
+           
+            var request = new XMLHttpRequest();
+            request.open('GET', uri, true);
+
+            request.onload = function() {
+            if (this.status >= 200 && this.status < 400) {
+                // Success!
+                var rawResult = JSON.parse(this.response);
+                me.dailydata=rawResult;
+                if (!rawResult || rawResult.errorCode) {
+                    me.showError("Error loading data", rawResult.message);
+                    if (rawResult) console.log("Error loading data (1):"+rawResult.message);
+                    return;
+                }
+
+                me.processValues(rawResult);
+                if (me.config.hourly) {
+                    me.hourlydata=rawResult;
+                } else {
+                    me.dailydata=rawResult;
+                }
+                 //refresh the display
+                 me.refresh();
+            } else {
+                console.error("Connected to Target Server but an Error Occured!");
+
+            }
+            };
+
+            request.onerror = function() {
+            console.error("And Error Occured!");
+            };
+
+            request.send();
+
+
+            
+        }
+        //checks the forecast values and create Date instances for the data time values
+        this.processValues=function(data) {
+            var forecastValues=me.getForecastValues(data);
+            if (!forecastValues) return;
+            var current=new Date();
+            var offset=current.getTimezoneOffset()*60000;
+            forecastValues.forEach(function(d) {
+                d.datetime=new Date(d.datetime+offset );
+            });
+        }
+
+        //extracts the array of forecast values representing each time period in the data
+        this.getForecastValues=function(data) {
+            if (!data) {
+               throw "No data available for "+me.config.location;
+            }
+            var location=data.location;
+
+            if (!location) {
+                throw "No locations found in data for "+me.config.location;
+            }
+
+            if (location.address) {
+                if (localStorage) localStorage.setItem("loc", location.address);
+                me.config.location=location.address;
+            }
+            var forecastValues=location.values;
+            forecastValues=forecastValues.filter(function(d) {
+                return d && (d.temp || d.temp===0);
+            });
+            return forecastValues;
+        }
 
             // Construct OpenWeatherMap API request URL
-            var apiKey = me.config.key;
+            // Construct OpenWeatherMap API request URL
+            var apiKey = "40f877ad22bab7d835d9c272195c88b6"; // Replace with your API key
             var apiUrl = "https://api.openweathermap.org/data/2.5/onecall?";
-            apiUrl += "lat=LATITUDE&lon=LONGITUDE&exclude=minutely,hourly,daily&appid=" + apiKey + "&units=imperial";
+            apiUrl += "lat=41.230560&lon=-111.973709&exclude=minutely,hourly,daily&appid=" + apiKey + "&units=imperial";
+
             
             // Make a request to OpenWeatherMap API
             fetch(apiUrl)
