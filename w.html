@@ -1,6 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <script>
-    window.location.replace("https://west7014.github.io/weather");
-  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+<link rel="icon" href="https://westz-studios.w3spaces.com/favicon.png">
+<meta name="author" content="West7014 studios">
+<meta name="title" content="W7s Weather">
+   <title>W7s Weather Widget</title>
+<div class="weatherWidget" style="font-family: 'Ubuntu', sans-serif; background-image: url('https://west7014.github.io/Weather-Assets/Weather-Summer-Background.jpg'); background-repeat: no-repeat; background-position: center; background-size: contain; border-radius: 10px;"></div>
+<script>
+   window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
+   window.weatherWidgetConfig.push({
+       selector:".weatherWidget",
+       apiKey:"Z5HG69NM679LAMZ6MG4PTL9A4", 
+       location:"84401", 
+       unitGroup:"us", 
+       forecastDays:5, 
+       title:"Ogden Utah", 
+       showTitle:true, 
+       showConditions:true
+   });
+  
+   (function() {
+   var d = document, s = d.createElement('script');
+   s.src = 'https://west7014.github.io/Weather-Assets/OpenWeatherBaseTest.js';
+   s.setAttribute('data-timestamp', +new Date());
+   (d.head || d.body).appendChild(s);
+   })();
+</script>
 </html>
