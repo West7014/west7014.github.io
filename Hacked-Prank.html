@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prank Page</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #ff0000;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<img src="https://your-image-url.com/image.jpg" alt="Hacker Image">
+<h1>You have been hacked!</h1>
+<button onclick="showAlert()">Click Me</button>
+
+<script>
+function showAlert() {
+  var choice = confirm("Hello There!\n\nDo you want to continue?");
+  if (choice) {
+    alert("Okay...");
+  } else {
+    alert("No");
+  }
+}
+</script>
+</body>
+</html>
