@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="https://www.visualcrossing.com/widgets/forecast-simple/css/weather-icons.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+            width: 100%;
+        }
+
+        .weather-container {
+            text-align: center;
+        }
+        .WeatherForecast {
+        background-color: navy;
+        color: white;
+        broder-radius: 15px;
+        height: 130px;
+        width: 100%;
+        }
+        .current-temp {
+            margin-bottom: 20px;
+        }
+
+        .forecast {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .forecast-day {
+            flex: 1;
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="weather-container">
+        <div class="current-temp">
+            <!-- Temperature will be dynamically updated -->
+        </div>
+        <div class="weather-icon">
+            <!-- Icon will be dynamically updated -->
+        </div>
+        <div class="forecast">
+            <!-- Forecast days will be dynamically updated -->
+        </div>
+    </div>
+   
+    <script>
+        const apiKey = '40f877ad22bab7d835d9c272195c88b6';
+                    const highTemp = Math.round(day.main.temp_max);
+                    const highTempModified = Math.round((highTemp * 9/5) + 32);
+                    const weatherIconCode = day.weather[0].icon;
+
+                    forecastContainer.innerHTML += `
+                    <div class="WeatherForecast">
+                        <div class="forecast-day">
+                            <p>${dayName}</p>
+                            <i class="wi wi-owm-${weatherIconCode}"></i>
+                            <p>High: ${highTempModified}°F/${highTemp}°C</p>
+                        </div>
+                    </div>
+                    `;
+
+                    currentDayIndex = (currentDayIndex + 1) % 7; // Move to the next day
+
+                    if (forecastContainer.childElementCount >= 6) {
+
+
+                        break; // Display only the next 6 days
+                    }
+                }
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+            }
+        }
+       
+        fetchWeatherData();
+    </script>
+</body>
+</html>
