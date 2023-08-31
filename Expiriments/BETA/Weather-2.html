@@ -60,25 +60,54 @@
    
     <script>
         const apiKey = '40f877ad22bab7d835d9c272195c88b6';
-                    const highTemp = Math.round(day.main.temp_max);
-                    const highTempModified = Math.round((highTemp * 9/5) + 32);
-                    const weatherIconCode = day.weather[0].icon;
+        const weatherConditions = {
+            '1d': 'sunny-day',
+            '1n': 'sunny-night',
+            '2d': 'light-clouds-day',
+            '2n': 'light-clouds-night',
+            '3': 'heavy-clouds',
+            '4': 'light-rain',
+            '5': 'heavy-rain',
+            '6': 'light-snow',
+            '7': 'heavy-snow',
+            '8': 'warning-icon',
+            '9': 'hurricane-icon'
+        };
 
-                    forecastContainer.innerHTML += `
-                    <div class="WeatherForecast">
-                        <div class="forecast-day">
-                            <p>${dayName}</p>
-                            <i class="wi wi-owm-${weatherIconCode}"></i>
-                            <p>High: ${highTempModified}°F/${highTemp}°C</p>
+        async function fetchWeatherData() {
+            try {
+                const response = await fetch(/* Your weather data API endpoint with apiKey */);
+                const data = await response.json();
+                const forecastContainer = document.querySelector('.forecast');
+                const days = data.daily;
+
+                let currentDayIndex = new Date().getDay();
+
+                for (const day of days) {
+                    const dayName = getDayName(currentDayIndex);
+                    const weatherIconCode = day.weather[0].icon;
+                    const weatherCode = weatherIconCode.substring(0, 3);
+
+                    if (weatherConditions.hasOwnProperty(weatherCode)) {
+                        const weatherClass = weatherConditions[weatherCode];
+
+                        const highTemp = Math.round(day.temp.max);
+                        const highTempModified = Math.round((highTemp * 9 / 5) + 32);
+
+                        forecastContainer.innerHTML += `
+                        <div class="WeatherForecast">
+                            <div class="forecast-day">
+                                <p>${dayName}</p>
+                                <img src="path/to/${weatherClass}.png" alt="${weatherClass}">
+                                <p>High: ${highTempModified}°F/${highTemp}°C</p>
+                            </div>
                         </div>
-                    </div>
-                    `;
+                        `;
+                    }
 
                     currentDayIndex = (currentDayIndex + 1) % 7; // Move to the next day
 
                     if (forecastContainer.childElementCount >= 6) {
-
-
                         break; // Display only the next 6 days
                     }
                 }
@@ -86,7 +115,12 @@
                 console.error('Error fetching weather data:', error);
             }
         }
-       
+
+        function getDayName(index) {
+            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            return daysOfWeek[index];
+        }
+
         fetchWeatherData();
     </script>
 </body>
