@@ -221,42 +221,20 @@ const firebaseConfig = {
   const auth = getAuth(app);
   const db = getDatabase(app); db = getDatabase(app);base.initializeApp(firebaseConfig);
 
-/*
-    const firebaseConfig = {
-  apiKey: "AIzaSyALODFiCYJacvldQyb_kSxycPbRou-aOno",
-  authDomain: "w7sloginsys.firebaseapp.com",
-  projectId: "w7sloginsys",
-  storageBucket: "w7sloginsys.appspot.com",
-  messagingSenderId: "873746584561",
-  appId: "1:873746584561:web:1e8be3dc9f420c5515ea50",
-  measurementId: "G-8S6W392B13"
-};
+document.getElementById("MainContent").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent the default form submission
 
-firebase.initializeApp(firebaseConfig);
-
-const appCheck = firebase.appCheck();
-appCheck.activate(
-  new firebase.appCheck.ReCaptchaEnterpriseProvider(
-    "6Lfe9GonAAAAAN6DKVjjg5ezh_y73CvkdAXr1-dF"
-  ),
-  true
-);*/
-
-document.addEventListener("DOMContentLoaded", function() {
-  document.getElementById("MainContent").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-    var email = document.getElementById("email").value;
-    var confirmPassword = document.getElementById("confirmPassword").value;
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+  var email = document.getElementById("email").value;
+  var confirmPassword = document.getElementById("confirmPassword").value;
 
     if (password !== confirmPassword) {
       alert("Passwords do not match.");
       return;
     }
     if (password === "" || confirmPassword === "") {
-      alert("Passwords are blank.");
+      alert("Password(s) are blank.");
       return;
     }
     if (username.length > 20) {
@@ -269,38 +247,35 @@ document.addEventListener("DOMContentLoaded", function() {
       return;
     }
 
-    grecaptcha.execute('6LfHiyQmAAAAAJOlIWjemQOvjHJdaEMlCywWgqEL', { action: 'signup' })
-      .then(function(token) {
-        // Create the user in Firebase Authentication
-        firebase.auth().createUserWithEmailAndPassword(email, password)
-          .then(function(userCredential) {
-            var user = userCredential.user;
+  // Use Firebase authentication to register the user
+  import { createUserWithEmailAndPassword } from 'firebase/auth';
+  const auth = getAuth(app); // Assuming 'app' is your Firebase app instance
 
-            // Update the user's display name (optional)
-            user.updateProfile({
-              displayName: username
-            }).then(function() {
-              // Redirect to a success page or do other actions
-              window.location.href = "account.html";
-            }).catch(function(error) {
-              console.error("Error updating display name: ", error);
-            });
-          })
-          .catch(function(error) {
-            console.error("Error creating user: ", error);
-          });
-      })
-      .catch(function(error) {
-        console.error("Error executing reCAPTCHA: ", error);
-      });
-  });
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Registration success
+      const user = userCredential.user;
+
+      // Update the user's display name (optional)
+      updateProfile(user, { displayName: username })
+        .then(() => {
+          // Redirect to a success page or handle further actions
+          window.location.href = "account.html";
+        })
+        .catch((error) => {
+          console.error("Error updating display name: ", error);
+        });
+    })
+    .catch((error) => {
+      console.error("Error creating user: ", error);
+    });
+
 });
-
   </script>
 </head>
 <body>
   <div id="SignUpBox">
-    <form id="MainContent">
+    <form id="MainContent" method="POST" action="javascript:void(0);">
       <h2>Sign Up</h2>
       <input id="email" type="email" name="email" placeholder="Email Address" required><br>
       <input id="username" type="text" name="username" placeholder="Username" required><br>
