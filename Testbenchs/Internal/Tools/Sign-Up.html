@@ -196,13 +196,13 @@ color: #5f1ec7;
 }
 
 </style>
-<script type="module" src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js"></script>
-<script type="module" src="https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js"></script>
-<script type="module" src="https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js"></script>
 
 <script type="module">
   import { initializeApp } from 'firebase/app';
-  import { getAuth } from 'firebase/auth';
+  import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
   import { getDatabase } from 'firebase/database';
 
 const firebaseConfig = {
@@ -216,25 +216,24 @@ const firebaseConfig = {
   measurementId: "G-8S6W392B13"
 };
 
-
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
-  const db = getDatabase(app); db = getDatabase(app);base.initializeApp(firebaseConfig);
+  const db = getDatabase(app);
 
-document.getElementById("MainContent").addEventListener("submit", function(event) {
-  event.preventDefault(); // Prevent the default form submission
+  document.getElementById("MainContent").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
-  var email = document.getElementById("email").value;
-  var confirmPassword = document.getElementById("confirmPassword").value;
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var email = document.getElementById("email").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
 
     if (password !== confirmPassword) {
       alert("Passwords do not match.");
       return;
     }
     if (password === "" || confirmPassword === "") {
-      alert("Password(s) are blank.");
+      alert("Passwords are blank.");
       return;
     }
     if (username.length > 20) {
@@ -247,31 +246,22 @@ document.getElementById("MainContent").addEventListener("submit", function(event
       return;
     }
 
-  // Use Firebase authentication to register the user
-  import { createUserWithEmailAndPassword } from 'firebase/auth';
-  const auth = getAuth(app); // Assuming 'app' is your Firebase app instance
-
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Registration success
-      const user = userCredential.user;
-
-      // Update the user's display name (optional)
-      updateProfile(user, { displayName: username })
-        .then(() => {
-          // Redirect to a success page or handle further actions
-          window.location.href = "account.html";
-        })
-        .catch((error) => {
-          console.error("Error updating display name: ", error);
-        });
-    })
-    .catch((error) => {
-      console.error("Error creating user: ", error);
-    });
-
-});
-  </script>
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        updateProfile(user, { displayName: username })
+          .then(() => {
+            window.location.href = "account.html";
+          })
+          .catch((error) => {
+            console.error("Error updating display name: ", error);
+          });
+      })
+      .catch((error) => {
+        console.error("Error creating user: ", error);
+      });
+  });
+</script>
 </head>
 <body>
   <div id="SignUpBox">
