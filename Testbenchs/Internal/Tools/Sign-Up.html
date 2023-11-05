@@ -196,22 +196,29 @@ color: #5f1ec7;
 }
 
 </style>
-  <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js"></script>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <script>
-    const firebaseConfig = {
-  apiKey: "AIzaSyALODFiCYJacvldQyb_kSxycPbRou-aOno",
-  authDomain: "w7sloginsys.firebaseapp.com",
-  projectId: "w7sloginsys",
-  storageBucket: "w7sloginsys.appspot.com",
-  messagingSenderId: "873746584561",
-  appId: "1:873746584561:web:1e8be3dc9f420c5515ea50",
-  measurementId: "G-8S6W392B13"
-};
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js"></script>
 
-firebase.initializeApp(firebaseConfig);
+<script>
+  import { initializeApp } from 'firebase/app';
+  import { getAuth } from 'firebase/auth';
+  import { getDatabase } from 'firebase/database';
+
+  // Firebase configuration
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_AUTH_DOMAIN",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_STORAGE_BUCKET",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID",
+    measurementId: "YOUR_MEASUREMENT_ID"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getDatabase(app);base.initializeApp(firebaseConfig);
 
 /*
     const firebaseConfig = {
