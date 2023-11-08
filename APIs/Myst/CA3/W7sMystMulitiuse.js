@@ -1,0 +1,13 @@
+const head = document.getElementsByTagName("head")[0];
+const style = document.createElement("style");
+style.innerHTML = "@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');";
+head.appendChild(style);
+const poweredBy = document.createElement("div");
+poweredBy.innerText = "ERR FOR SITE OWNER: W7S MYST ISN'T PUBLIC";
+poweredBy.style.position = "fixed";
+poweredBy.style.bottom = "0";
+poweredBy.style.left = "0";
+poweredBy.style.color = "white";
+poweredBy.style.backgroundColor = "black";
+poweredBy.style.fontFamily = "Ubuntu, sans-serif";
+document.body.appendChild(poweredBy);
