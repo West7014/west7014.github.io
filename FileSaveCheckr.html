@@ -1,0 +1,43 @@
+HTML
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unsaved Changes Confirmation</title>
+</head>
+<body>
+    <script>
+        // This function checks if the user has unsaved changes and displays a confirmation dialog
+        function confirmExit() {
+            var unsavedChanges = true; // Replace with a condition that checks for unsaved changes
+            if (unsavedChanges) {
+                var confirmationMessage = "You have unsaved changes. Do you want to save before leaving?";
+                var userResponse = window.confirm(confirmationMessage);
+                if (userResponse) {
+                    // Logic to save the document
+                    console.log("Document saved.");
+                } else {
+                    // Logic to discard changes
+                    console.log("Changes discarded.");
+                }
+            }
+        }
+
+        // Event listener for the window's beforeunload event
+        window.addEventListener('beforeunload', function (e) {
+            // Cancel the event as stated by the standard.
+            e.preventDefault();
+            // Chrome requires returnValue to be set.
+            e.returnValue = '';
+        });
+
+        // Example function to simulate user interaction
+        function simulateUserAction() {
+            // Simulate user action that would trigger the confirmation dialog
+            window.onbeforeunload = confirmExit;
+        }
+    </script>
+
+    <button onclick="simulateUserAction()">Simulate Unsaved Changes</button>
+</body>
+</html>
