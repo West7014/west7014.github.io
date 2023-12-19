@@ -2,10 +2,10 @@
 
 ---
 
-#### A site I use to host stuff for w7s or stuff for others. I also host a few web apps on here too.
+#### I use a site to host stuff for w7s or others. I also host a few web apps here too.
 
-## Site Diretorys
+## Site Directories
 
 ---
 
-[Accounts](#) **|** [CSS](#) **|** [Connect](#) **|** [Photographee®](#) **|** [TESTING](#) **|** [Home](#)
+[Accounts](#) **|** [CSS](#) **|** [Connect](#) **|** [Photographee](#) **|** [TESTING](#) **|** [Home](#)
