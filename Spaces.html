@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,6 +55,9 @@
   align-items: center;
   margin-top: 20px;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #chat-form input {
@@ -65,6 +69,8 @@
   border: 1px solid transparent;
   height: 25px;
   fill: white;
+  display: grid;
+  place-items: center;
 }
 
 #chat-form button {
@@ -397,20 +403,21 @@
   </script>
 </head>
 <body>
-  <!-- Preload animation and progress bar -->
+  <!-- Preload animation and progress bar --><!--
   <div class="preload">
     <div class="preload-spinner"></div>
     <div class="progress-bar">
       <div class="progress-bar-inner"></div>
     </div>
   </div>
-  <!--Chat Code-->
+  <!--Chat Code--><!--
   <div id="chat-container">
     <div id="chat-window">
       <ul id="message-list"></ul>
     </div>
     <form id="chat-form">
-      <input required type="text" id="sender" placeholder="Name">
+      <input type="text" id="sender" placeholder="Name" style="opacity: 0;">
+      <br>
       <input required type="text" id="message" placeholder="Message">
       <button type="submit"><span class="material-icons">send</span></button>
     </form>
@@ -420,7 +427,7 @@
     </form>
     <br>
     <button type="reset" id="usernameresetbutton"><span class="material-icons">restart_alt</span></button>
-    <!--<p>This Application is being updated currently..</p>-->
+    <!--<p>This Application is being updated currently..</p>--><!--
   </div>
 
 <div class="menu-wrapper">
@@ -456,22 +463,24 @@ const firebaseConfig = {
 // Init Firebase
 firebase.initializeApp(firebaseConfig);
 
-// database service
+// db service
 var database = firebase.database();
 
 // ref DOM elements
 var messageList = document.getElementById('message-list');
 var chatForm = document.getElementById('chat-form');
-var senderInput = document.getElementById('sender');
+var senderInput = localStorage.getItem('Username')
 var messageInput = document.getElementById('message');
 
-// Save sendrr local strg and inpt to the saved name, if it exists
+// Save sendr local strg and inpt to the saved name, if it exists
 var savedSender = localStorage.getItem('sender');
 if (savedSender) {
   senderInput.value = savedSender;
+} else {
+window.open("https://west7014-studios.w3spaces.com/account.html");
 }
 
-// Listen for new messages in the database
+// Listen for new msgs in the database
 database.ref('messages').on('child_added', function(snapshot) {
   var message = snapshot.val();
   var li = document.createElement('li');
@@ -510,5 +519,6 @@ chatForm.addEventListener('reset', function(event) {
   localStorage.clear('sender');
 });
   </script>
+  <script src="https://w7s-connect.w3spaces.com/API/W7s-Insider/V5E/ConnectV5E.js"></script>
 </body>
 </html>
