@@ -1,0 +1,29 @@
+{
+    "name": "node-thing",
+    "version": "1.0.0",
+    "description": "Stuff",
+    "private": false,
+    "main": "../js/index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": {
+      "name": "Blitz",
+      "email": "west701497@gmail.com",
+      "url": "https://example.com"
+    },
+    "license": "ISC",
+    "dependencies": {
+      "@firebase/auth": "^1.8.1",
+      "@firebase/database": "^1.0.10",
+      "express": "^4.21.1",
+      "firebase": "^11.0.2"
+    },
+    "devDependencies": {
+
+    },
+    "bugs": {
+      "url": "https://example.com"
+    }
+  }
+  
