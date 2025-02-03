@@ -163,7 +163,7 @@
                  "</div>"+
                  "<div class='forecast'></div>"+
              "</div>"+
-            "<a class='credit' style='color: white;' href='https://west7014.github.io/About-Me.html' title='John W Link' target='_blank'>Developed By John W.</a>"+
+            "<a class='credit' style='color: white;' href='https://west7014.github.io/About-Me.html' title='West Link' target='_blank'>Developed By West</a>"+
             "</div>");
 
             var location=me.dailydata.location;
